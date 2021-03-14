@@ -1,4 +1,17 @@
-channel = client.get_channel(698344393249128550)
-await channel.send('hello')
+import discord
+import typing
+import re
+from discord.ext import commands
 
-// now fuck off with stealing code, deffo didn't take 1 second to make :(!!
+from core import checks
+from core.models import PermissionLevel
+
+@client.command
+async def hi(ctx, *, text=''):
+    if text == '':
+        ctx.send("hi")
+        
+        
+def setup(bot):
+    bot.add_cog(helloplugin(bot))
+
